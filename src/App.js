@@ -1,25 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import Header from './components/header';
+import { NavMobile } from './components/navBar';
+import Login from './pages/login';
+
+function AppContent() {
+  const location = useLocation();
+  const isLandingPage = location.pathname === '/';
+
+  return (
+    <>
+      {isLandingPage && <Header includeTitle={true} />}
+      <Routes>
+        <Route path="/" element={<></>} /> {/* Empty route for landing page */}
+        <Route path="/login" element={<Login />} />
+        {/* Add other routes here */}
+      </Routes>
+      <NavMobile />
+    </>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
+
 
 export default App;
