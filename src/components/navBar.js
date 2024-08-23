@@ -16,11 +16,11 @@ export const NavMobile = () => {
   };
 
   return (
-    <div ref={ref} className="fixed top-5 w-full z-50">
+    <div ref={ref} className="fixed top-0 w-full z-50 bg-[#F9F5F0] h-[80px]">
       {isOpen && (
         <>
           {/* Menu */}
-            <ul className="grid gap-2 fixed left-5 top-20 z-50">
+            <ul className="grid gap-2 fixed left-5 top-20 h-[100px] z-50">
               {routes.map((route) => {
                 return (
                   <li key={route.title}>
@@ -32,10 +32,12 @@ export const NavMobile = () => {
                       <span
                         className={`flex 
                           text-5xl 
-                          uppercase font-black 
-                          text-white hover:text-blue-600
+                          uppercase
+                          text-white hover:text-[#c45e31]
                           max-sm:text-3xl
                           max-md:text-4xl
+                          font-black
+                          transition-colors
                         `}
                       >
                         {route.title}
@@ -53,18 +55,19 @@ export const NavMobile = () => {
         </>
       )}
       
-      <div className="relative flex justify-center items-center z-50">
+      <div className="relative flex justify-center items-center z-50 top-5">
         <Hamburger
           toggled={isOpen}
           size={30}
           toggle={setOpen}
-          color={isOpen ? "white" : "black"}
+          color={isOpen ? "white" : "#3c392b"}
         />
         <Link
           to="/"
         >
         <h1 
-        className={`text-2xl font-black ml-5 transition-colors duration-500 ${isOpen ? "text-white" : "text-black"} hover:text-blue-700 hover:duration-0`}
+        className={`text-2xl font-black ml-5 transition-colors 
+        duration-500 ${isOpen ? "text-white" : "text-[#3c392b]"} hover:text-[#c45e31] hover:duration-0`}
         onClick={() => setOpen(false)}
         >
            YATE</h1>

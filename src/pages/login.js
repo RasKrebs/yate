@@ -1,31 +1,45 @@
 import { Button } from "@mui/material";
-import Header from "../components/header";
-import { appleLogo } from "../components/constants";
-
-function LoginButton({ Name, Logo, backgroundColor, textMargin, textColor}) {
-    return (
-        <button 
-          className={`flex items-center p-1 w-[300px] h-[50px] bg-${backgroundColor} rounded-full hover:bg-blue-700`}>
-            <span className="flex-shrink-0 text-left ml-[15px]">{Logo}</span>
-            <span className={` text-${textColor} ml-[${textMargin}px]`}>{Name}</span>
-        </button>
-    );
-}
+import Header from "../components/landingPage";
+import { appleLogo, googleLogo, facebookLogo } from "../components/constants";
+import { LoginButton } from "./loginComponents/loginButtons";
 
 function Login() {
     return (
         <>
-            <Header isLandingPage={false} />
-            <div className="h-screen flex items-center justify-center">
+            <div className="opacity-50">
+                <Header isLandingPage={false} />
+            </div>
+            <div className="h-screen flex items-center justify-center max-sm:-translate-y-[50px]">
                 <div className="signUpWithBars grid w-full z-10 text-center justify-center">
+                    
+                    {/* Apple button */}
                     <LoginButton 
                     Name={"Apple"} 
                     Logo={appleLogo} 
                     backgroundColor={"black"} 
-                    textMargin = {60}
                     textColor={"white"}
                     />
-                    <LoginButton Name={"Test 2"} Logo={""} backgroundColor={"blue"} textMargin = {85} />
+                    
+                    {/* Facebook login button */}
+                    <LoginButton 
+                    Name={"Facebook"} 
+                    Logo={ facebookLogo } 
+                    backgroundColor={"[#3F51B5]"} 
+                    textColor={"white"} />
+                    
+                    {/* Google button */}
+                    <LoginButton 
+                    Name={"Google"} 
+                    Logo={googleLogo} 
+                    backgroundColor={"white"} 
+                    textColor={"black"} />
+                    
+                    {/* Login with email button */}
+                    <hr className="border-[1px] border-full border-black w-full my-4 opacity-25" />
+                    <a href="https://www.erdetfredag.dk/" className={`relative flex items-center 
+                    justify-center p-1 w-[300px] hover:text-green-700 text-blue-700`}>
+                        Continue with Email →
+                    </a>
                 </div>
             </div>
         </>

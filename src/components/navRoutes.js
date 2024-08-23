@@ -35,10 +35,4 @@ export const routes = [
     Icon: LoginIcon,
     color: "#004cff",
   },
-  {
-    title: "Contact",
-    href: "/contact",
-    Icon: InfoIcon,
-    color: "#732982"
-  },
 ];

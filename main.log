@@ -1,0 +1,8 @@
+[1723892960] Log start
+[1723892960] Cmd: llama-cli --hf-repo reach-vb/Meta-Llama-3.1-8B-Instruct-Q6_K-GGUF --hf-file meta-llama-3.1-8b-instruct-q6_k.gguf -p "Hvem er regent af danmark?" --ctx-size 8192
+[1723892960] main: build = 3488 (75af08c4)
+[1723892960] main: built with Apple clang version 15.0.0 (clang-1500.3.9.4) for arm64-apple-darwin23.4.0
+[1723892960] main: seed  = 1723892960
+[1723892960] main: llama backend init
+[1723892960] main: load the model and apply lora adapter, if any
+[1723892960] main: error: unable to load model
